@@ -154,8 +154,10 @@ class plgVmPaymentVeritrans extends vmPSPlugin {
 		if($this->_currentMethod->credit_card)
 			$payements_type[] = 'indosat_dompetku';
 
-		$conversion_rate = floatval($this->_currentMethod->credit_card);
-
+		$conversion_rate = floatval($this->_currentMethod->conversion_rate);
+		if(!isset($conversion_rate) OR $conversion_rate='' OR $conversion_rate='1'){
+			$conversion_rate = 1;
+		}
 		$gross_amount= 0;
 	  	$items_details = array();
 
@@ -169,7 +171,7 @@ class plgVmPaymentVeritrans extends vmPSPlugin {
 			$item['name'] = $line_item_wrapper->order_item_name;
 			$items_details[] = $item;
 
-			$gross_amount += $item['price'];
+			$gross_amount += $item['price'] * $item['quantity'];
 		}
 
 		//push shipment & shipment tax to item details
@@ -180,7 +182,7 @@ class plgVmPaymentVeritrans extends vmPSPlugin {
 		$item['name'] = "Shipment & Shipment tax";
 		$items_details[] = $item;
 
-		$gross_amount += $item['price'];
+		$gross_amount += $item['price'] * $item['quantity'];
 
 		//push discount to item details
 		$item = array();
@@ -190,7 +192,7 @@ class plgVmPaymentVeritrans extends vmPSPlugin {
 		$item['name'] = "Coupon Discount";
 		$items_details[] = $item;
 
-		$gross_amount += $item['price'];
+		$gross_amount += $item['price'] * $item['quantity'];
 
 		// Billing name
 		$fname = $order['details']['BT']->first_name;
