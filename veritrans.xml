@@ -48,7 +48,7 @@
                 <field name="cost_per_transaction" class="required" type="hidden" default="0"/>
                 
                 <field type="vmtitle" default="Credit Card Security"
-                       description="This should be enabled, please contact Veritrans to disable this feature"/>
+                       description="You must enable 3D Secure. Please contact us if you wish to disable this feature in the Production environment."/>
 
                 <field name="is3ds" type="radio" default="1" label="Credit Card 3DSecure" description="Enable 3DS Secure for Credt Card transaction">
                     <option value="1">Enable</option>
