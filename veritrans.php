@@ -289,7 +289,7 @@ class plgVmPaymentVeritrans extends vmPSPlugin {
 		vRequest::setVar('html', $html);
 
 		// $this->emptyCart(); 
-
+		header("Location: ".$vtweb_url);
 		return;
 	}
 
