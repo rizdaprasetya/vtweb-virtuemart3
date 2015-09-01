@@ -346,7 +346,7 @@ class plgVmPaymentVeritrans extends vmPSPlugin {
 	    if ($transaction_status == 'capture') {
 	      if ($fraud == 'challenge') {
 	        $payment_status = $this->_currentMethod->status_waiting;
-	        $comments = 'Payment status: Challange, please resolve in Veritrans MAP';
+	        $comments = 'Payment status: Challenge, please resolve in Veritrans MAP';
 	      }
 	      elseif ($fraud == 'accept') {
 	        $payment_status = $this->_currentMethod->status_success;
