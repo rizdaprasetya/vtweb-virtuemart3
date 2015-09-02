@@ -42,7 +42,7 @@ The manual installation method involves downloading our feature-rich plugin and 
 
 #### Plugin Configuration
 
-1. Open drupal admin page, open menu **extensions > extensions manager**.
+1. Open Joomla admin page, open menu **extensions > extensions manager**.
 2. Click **Discover** under Extension Manager title, then click icon **Discover** on upper right menu
 3. Tick **VM Payment - veritrans**, then click icon **Install**
 4. Click **Manage**, input ``veritrans`` in form **filter** then click search. Tick **VM Payment - veritrans**, then click icon **Enable**
